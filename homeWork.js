@@ -2,14 +2,10 @@ const persons = [];
 
 let inputData = prompt("Enter a name and info about your person");
 while (inputData) {
-    const details = prompt("Enter details about your character:Id,Name,LastName,Age");
-    const [id, name, lastName, age] = details.split(",") && details.trim();
-    const person = new Person(id, name, lastName, age);
+    const date = inputData.split(",");
+    const person = new Person( date[0], date[1].trim(), date[2].trim(), date[3]);
     persons.push(person);
-    const continueInput = confirm("Congrats, do u want to enter another person or press exit for quit");
-    if (!continueInput) break;
-
-
+    inputData = prompt("Enter your Person Info:");
 }
 
 console.log(persons);
